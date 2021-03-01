@@ -1,21 +1,48 @@
 package Assignment3;
 
+/**
+ * <h1>Poly</h1>
+ * <p>
+ * This is an immutable class designed to perform following polynomial equation
+ * operations <br>
+ * Evaluate Polynomial equation<br>
+ * Add two polynomials <br>
+ * Multiply two polynomials <br>
+ * 
+ * </p>
+ * 
+ * @author Anuj Khandelwal
+ * @version 1.0
+ * @since 2021-02-26
+ */
 final public class Poly {
 	final private int degree;
 	private int polyArray[];
 
+	/**
+	 * Constructor to make polynomial equation using array.
+	 * 
+	 * @param arr
+	 *            Array to initiate Polynomial Coefficient.
+	 */
 	Poly(int polyArray[]) {
+		this.polyArray = new int[polyArray.length];
 		for (int i = 0; i < polyArray.length; i++) {
 			this.polyArray[i] = polyArray[i];
 		}
 		int maxDegree = 0;
 		for (int i = polyArray.length - 1; i >= 0; i--) {
 			if (polyArray[i] != 0) {
-				maxDegree = i + 1;
+				maxDegree = i;
 				break;
 			}
 		}
 		this.degree = maxDegree;
+	}
+
+	public Poly() {
+		degree = 0;
+		this.polyArray = new int[0];
 	}
 
 	/**
@@ -29,7 +56,7 @@ final public class Poly {
 	 */
 	public float evaluate(float var) {
 		float result = 0.0f;
-		for (int i = 0; i < degree; i++) {
+		for (int i = 0; i <= degree; i++) {
 			result = (float) (result + (polyArray[i] * Math.pow(var, i)));
 		}
 		return result;
@@ -59,21 +86,21 @@ final public class Poly {
 		Poly addition;
 		int maximumDegree = p1.degree() > p2.degree() ? p1.degree() : p2
 				.degree();
-		int pArray[] = new int[maximumDegree];
+		int pArray[] = new int[maximumDegree+1];
 		int i = 0;
 		if (p1.degree() > p2.degree()) {
-			for (i = 0; i < p2.degree(); i++) {
+			for (i = 0; i <= p2.degree(); i++) {
 				pArray[i] = p1.polyArray[i] + p2.polyArray[i];
 			}
-			for (; i < p1.degree(); i++) {
+			for (; i <= p1.degree(); i++) {
 				pArray[i] = p1.polyArray[i];
 			}
 
 		} else {
-			for (i = 0; i < p1.degree(); i++) {
+			for (i = 0; i <= p1.degree(); i++) {
 				pArray[i] = p1.polyArray[i] + p2.polyArray[i];
 			}
-			for (; i < p2.degree(); i++) {
+			for (; i <= p2.degree(); i++) {
 				pArray[i] = p2.polyArray[i];
 			}
 		}
@@ -94,9 +121,9 @@ final public class Poly {
 	 */
 	public static Poly multiplyPoly(Poly p1, Poly p2) {
 
-		int pArray[] = new int[p1.degree() * p2.degree() + 1];
-		for (int i = 0; i < p1.degree(); i++) {
-			for (int j = 0; j < p2.degree(); j++) {
+		int pArray[] = new int[(p1.degree()+1) * (p2.degree()+1) + 1];
+		for (int i = 0; i <= p1.degree(); i++) {
+			for (int j = 0; j <= p2.degree(); j++) {
 				pArray[i + j] += p1.polyArray[i] * p2.polyArray[j];
 			}
 		}
@@ -111,10 +138,23 @@ final public class Poly {
 	 * 
 	 */
 	public void print() {
-		for (int i = 0; i < degree; i++) {
-			System.out.print(polyArray[i] + " ");
+		for (int i = 0; i <= degree; i++) {
+			if (polyArray[i] == 0)
+				continue;
+			else {
+				if (polyArray[i] < 0)
+					System.out.print(polyArray[i] + "x^" + (i));
+				else {
+					if (i != 0)
+						System.out.print("+" + polyArray[i] + "x^" + (i));
+					else {
+						System.out.print(polyArray[i] + "x^" + (i));
+					}
 
+				}
+			}
 		}
+		System.out.println();
 	}
 
 }

@@ -2,23 +2,48 @@ package Assignment3;
 
 import java.util.ArrayList;
 
+/**
+ * <h1>intset</h1>
+ * <p>
+ * This is an immutable class designed to perform following operations <br>
+ * Create a Set<br> Check size <br>Display Set<br> Find Complement set<br> Is member or not
+ * <br>Check Subset Find union
+ * 
+ * </p>
+ * 
+ * @author Anuj Khandelwal
+ * @version 1.0
+ * @since 2021-02-26
+ */
 final public class intSet {
 	private final int set[] = new int[1000];
 	int size = 0;
 
+	/**
+	 * Constructor to make empty set
+	 */
 	intSet() {
 		for (int i = 0; i < 1000; i++) {
 			set[i] = -1;
 		}
 	}
 
+	/**
+	 * Constructor to make set using array.
+	 * 
+	 * @param arr
+	 *            Array to initiate set.
+	 */
+
 	intSet(int... arr) {
 		for (int i = 0; i < 1000; i++) {
 			set[i] = -1;
 		}
 		for (int i = 0; i < arr.length; i++) {
-			set[arr[i] - 1] = 1;
-			size++;
+			if ((arr[i] >= 1 && arr[i] <= 1000) && !iSMember(arr[i])) {
+				set[arr[i] - 1] = 1;
+				size++;
+			}
 		}
 	}
 
@@ -31,10 +56,12 @@ final public class intSet {
 	 * 
 	 */
 	public boolean iSMember(int x) {
-		if (this.set[x - 1] == 1)
-			return true;
+		boolean result;
+		if ((x >= 1 && x <= 1000) && this.set[x - 1] == 1)
+			result = true;
 		else
-			return false;
+			result = false;
+		return result;
 	}
 
 	/**
@@ -44,7 +71,7 @@ final public class intSet {
 	 * 
 	 */
 	public int size() {
-		return size;
+		return this.size;
 	}
 
 	/**
@@ -57,16 +84,18 @@ final public class intSet {
 	 * 
 	 */
 	public boolean iSSubset(intSet s) {
+		boolean result = true;
 		for (int i = 1; i <= 1000; i++) {
 			if (s.set[i - 1] != -1) {
 				if (this.iSMember(i)) {
 					continue;
 				} else {
-					return false;
+					result = false;
+					break;
 				}
 			}
 		}
-		return true;
+		return result;
 	}
 
 	/**
@@ -117,12 +146,19 @@ final public class intSet {
 		return unionSet;
 	}
 
+	/**
+	 * This function is used to print content of set on console.
+	 * 
+	 * @return nothing.
+	 * 
+	 */
 	public void print() {
 		for (int i = 1; i <= 1000; i++) {
 			if (this.set[i - 1] != -1) {
-				System.out.println(i + " ");
+				System.out.print(i + " ");
 			}
 		}
+		System.out.println();
 	}
 
 }
