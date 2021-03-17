@@ -44,14 +44,8 @@ public class GrapdhNode {
 		this.weight = weight;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
 	public String toString() {
-		return "GrapdhNode [vertex=" + vertex + ", weight=" + weight + "]";
+		return "[vertex=" + vertex + ", weight=" + weight + "]";
 	}
 
 }
