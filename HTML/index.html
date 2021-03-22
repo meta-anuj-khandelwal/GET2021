@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metacube Parking System</title>
+
+    <style>
+      
+        .price{
+            display: inline-block;
+            border: 1px solid #000;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .box{
+            border: 1px solid #000;
+            margin: 10px;
+            width: 40%;
+            padding: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!--Navigation bar-->
+    <nav>
+        <a href="#addemp">Add Employee</a> |
+        <a href="#addvehicle">Add Vehicle</a> |
+        <a href="#feedback">Give Feedback</a> |
+        <a href="#pricing">Pricing</a>
+    </nav>
+    <!--Landing page image-->
+    <div class="landingimage">
+        <img src="https://static.businessworld.in/article/article_extra_large_image/1490175707_RblFrV_shutterstock_426709153-470.jpg" alt="Parking" width="600" height="400">
+    </div>
+
+    <!--Form to add Employee-->
+    <div id="addemp" class="box">
+        <H2>Add Employee</H2>
+        <form action="">
+            <label for="Name">Name </label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="gender">Gender </label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br><br>
+            <label for="email">Email </label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="password">Password </label>
+            <input type="password" id="password" name="password"><br><br>
+            <label for="confirm_password">Confirm Password </label>
+            <input type="password" id="confirm_password" name="confirm_password"><br><br>
+            <label for="contact_number">Contact Number </label>
+            <input type="text" id="contact_number" name="contact_number"><br><br>
+            <input type="submit" value="Submit">
+          </form>
+    </div>
+
+    <!--Form to add Vehicle-->
+    <div id="addvehicle"  class="box">
+        <H2>Add Vehicle</H2>
+        <form action="">
+            <label for="vehicle_company">Vehicle Company </label>
+            <input type="text" id="vehicle_company" name="vehicle_company"><br><br>
+            <label for="vehicle_model">Vehicle Model </label>
+            <input type="text" id="vehicle_model" name="vehicle_model"><br><br>
+            <label for="vehicle_type">Vehicle Type </label>
+            <input type="text" id="vehicle_type" name="vehicle_type"><br><br>
+            <label for="vehicle_number">Vehicle Number </label>
+            <input type="text" id="vehicle_number" name="vehicle_number"><br><br>
+            <label for="emp_id">Employee ID </label>
+            <input type="text" id="emp_id" name="emp_id"><br><br>
+            <label for="identification">Identification</label>
+            <textarea id="identification" name="identification" rows="4" cols="22" > </textarea><br><br>
+            <input type="submit" value="Submit">
+          </form>
+    </div>
+
+    <!--Form to give feedback-->
+    <div id="feedback"  class="box">
+        <H2>Get in touch</H2>
+        <form action="">
+            <input type="text" id="fname" name="fname" placeholder="Name"><br><br>
+
+            <input type="email" id="email" name="email" placeholder="Email"><br><br>
+        
+            <input type="text" id="subject" name="subject" placeholder="Subject"><br><br>
+            
+            <textarea id="message" name="message" rows="4" cols="22" placeholder="Describe yourself here..."> </textarea><br><br>
+           
+            <input type="submit" value="Send Email">
+          </form>
+    </div>
+
+    <!--Section to display price-->
+    <section id="pricing" >
+        <h2>Pricing For Parking</h2>
+
+        <div>
+          <div class="price">
+            <h3>CYCLE</h3>
+            <h2>100$ /month</h2>
+            <div>Daily : 5$</div>
+            <div>Monthly : 100$</div>
+            <div>Yearly : 500$</div>
+			<div><button>Purchase Now</button></div>
+          </div>
+          <div class="price">
+            <h3>MOTOR CYCLE</h3>
+            <h2>200$ /month</h2>
+            <div>Daily : 10$</div>
+            <div>Monthly : 200$</div>
+            <div>Yearly : 1000$</div>
+			<div><button>Purchase Now</button></div>
+          </div>
+          <div class="price">
+            <h3>FOUR WHEELERS</h3>
+            <h2>500$/month</h2>
+            <div>Daily : 20$</div>
+            <div>Monthly : 500$</div>
+            <div>Yearly : 3500$</div>
+			<div><button>Purchase Now</button></div>
+          </div>
+        </div>
+      </section> 
+</body>
+</html>
