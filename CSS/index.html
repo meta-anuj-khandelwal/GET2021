@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metacube Parking System</title>
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <!--Navigation bar-->
+    <nav>
+        <ul>
+            <li class="home_li"><a href="#">Home</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#feedback">Give Feedback</a> </li>
+            <li><a href="#addvehicle">Add Vehicle</a> </li>
+            <li><a href="#addemp">Add Employee</a></li>
+        </ul>
+    </nav>
+    <!--Landing page image-->
+    <div class="landingimage">
+        <img src="logo.png" alt="Parking"  >
+    </div>
+
+    <!--Form to add Employee-->
+    <br>
+    <button  id="addemp" class="collapsible">Employee Details</button>
+    <div class="content">
+    <div class="box">
+        <H2>Add Employee-</H2>
+        <form action="">
+            <div class="row">
+                <label class="col1" for="Name">Name </label>
+                <input class="col2" type="text" id="fname" name="fname" required><br><br>
+            </div>
+            <div class="row">
+                    <label class="col1" for="gender">Gender </label>
+                    <div class="col2">
+                        <input type="radio" id="male" name="gender" required value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label><br><br>
+                    </div>
+            </div>
+            <div class="row">
+                <label class="col1" for="email">Email </label>
+                <input  class="col2"  type="email" id="email" required name="email"><br><br>
+            </div>
+            <div class="row">
+                <label class="col1"  for="password">Password </label>
+                <input class="col2"  type="password" id="password" name="password" required><br><br>
+             </div>
+            <div class="row">
+                <label class="col1"  for="confirm_password">Confirm Password </label>
+                <input class="col2"  type="password" id="confirm_password" name="confirm_password" required><br><br>
+            </div>
+            <div class="row">
+                <label class="col1"  for="contact_number">Contact Number </label>
+                <input class="col2"  type="text" id="contact_number" name="contact_number" required><br><br>
+            </div>
+            <div class="row">
+            <input class="col1" type="submit" value="Add Employee">
+            </div>
+          </form>
+    </div>
+</div>
+    <!--Form to add Vehicle-->
+    <button id="addvehicle" class="collapsible">Vehicle Details</button>
+    <div class="content">
+    <div  class="box">
+        <H2>Add Vehicle-</H2>
+        <form action="">
+            <div class="row">
+                <label class="col1" for="vehicle_company">Vehicle Company </label>
+                <input  class="col1" type="text" id="vehicle_company" name="vehicle_company" required><br><br>
+            </div>
+            <div class="row">
+                <label  class="col1"  for="vehicle_model">Vehicle Model </label>
+                <input  class="col2"  type="text" id="vehicle_model" name="vehicle_model" required><br><br>
+            </div>
+            <div class="row">
+                <label  class="col1"  for="vehicle_type">Vehicle Type </label>
+                <input class="col2"   type="text" id="vehicle_type" name="vehicle_type" required><br><br>
+            </div>
+            <div class="row">
+                <label class="col1"  for="vehicle_number">Vehicle Number </label>
+                <input  class="col2" type="text" id="vehicle_number" name="vehicle_number" required><br><br>
+            </div>
+            <div class="row">
+                <label  class="col1" for="emp_id">Employee ID </label>
+                <input  class="col2" type="text" id="emp_id" name="emp_id" required><br><br>
+            </div>
+            <div class="row">
+                <label  class="col1" for="identification">Identification</label><br>
+                <textarea  id="identification"  name="identification" rows="4" cols="22" required > </textarea><br><br>
+            </div>
+            <div class="row">
+                <input class="col1"  type="submit" value="Add Vehicle">
+            </div>
+          </form>
+    </div>
+    </div>
+
+    <!--Form to give feedback-->
+    
+    <div id="feedback"  class="box">
+      
+        <H2>Get In Touch</H2>
+        <form action="">
+            <input type="text" id="fname" name="fname" placeholder="Name" required><br><br>
+
+            <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+        
+            <input type="text" id="subject" name="subject" placeholder="Subject" required><br><br>
+            
+            <textarea id="message" name="mess" rows="4" cols="22" placeholder="Message " required></textarea><br><br>
+           
+            <input type="submit" value="Send Email">
+          </form>
+    </div>
+   
+
+    <!--Section to display price-->
+    <div class="box" >
+        <section id="pricing" >
+           <h2>Pricing For Parking</h2>
+           <div>
+              <div class="price">
+                 <h3> CYCLE</h3>
+                 <h3  class="monthprice">100$ /month</h3>
+                 <div class="pricetext">
+                    <div>Daily : 5$</div>
+                    <div>Monthly : 100$</div>
+                    <div>Yearly : 500$</div>
+                 </div>
+                 <div><button>Purchase Now</button></div>
+              </div>
+              <div class="price">
+                 <h3>MOTOR CYCLE</h3>
+                 <h3  class="monthprice">200$ /month</h3>
+                 <div class="pricetext">
+                    <div>Daily : 10$</div>
+                    <div>Monthly : 200$</div>
+                    <div>Yearly : 1000$</div>
+                 </div>
+                 <div><button>Purchase Now</button></div>
+              </div>
+              <div class="price">
+                 <h3>FOUR WHEELERS</h3>
+                 <h3  class="monthprice">500$/month</h3>
+                 <div class="pricetext">
+                    <div>Daily : 20$</div>
+                    <div>Monthly : 500$</div>
+                    <div>Yearly : 3500$</div>
+                 </div>
+                 <div><button>Purchase Now</button></div>
+              </div>
+           </div>
+        </section>
+     </div>
+
+      <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
+
+
+</body>
+</html>
