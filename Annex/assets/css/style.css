@@ -1,0 +1,55 @@
+/* Left navigation */
+
+.left-nav{    
+position: fixed;
+}
+
+
+  /* left navbar button hover effect */
+.list-group-mine button :hover {
+   color: #5b6be8 !important;
+  }
+
+  
+/* Left scroll bar */
+.scroll{
+  height: 700px;
+  overflow-y: scroll;
+  padding-right: 10px;
+ 
+}
+/* For webpade name */
+.head-logo{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  
+}
+
+/* user photo styling */
+.user{
+  width: 40px;
+  border-radius: 50%;
+}
+
+/*title of cuurent page  */
+.page-title{
+padding-top: 20px;
+padding-left: 20px;
+}
+
+
+.breadcrumb-custom{
+  padding-top: 20px;
+padding-left: 90px;
+float: right;
+}
+
+/* box icon styling*/
+.round{
+  border-radius: 50%;
+  background-color:#5b6be8 ;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 10px;
+}
