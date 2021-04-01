@@ -1,0 +1,16 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "first node project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "anuj khandelwal",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.7",
+    "uniq": "^1.0.1"
+  }
+}
