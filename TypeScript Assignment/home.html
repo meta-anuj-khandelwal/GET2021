@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metacube Parking System</title>
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav>
+        <ul>
+            <li class="home_li"><a href="#">Home</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#addvehicle">Add Vehicle</a> </li>
+            <li><a href="#addemp">Add Employee</a></li>
+        </ul>
+    </nav>
+    <!--Landing page image-->
+    <div class="landingimage">
+        <img src="/images/logo.png" alt="Parking">
+    </div>
+
+    <!--Form to add Employee-->
+    <br>
+    <button id="addemp" class="collapsible">Employee Details</button>
+    <div class="content">
+        <div class="box">
+
+            <p id="user-text" class="center-item">
+                Enter Your Name
+            </p>
+            <br>
+            <form action="">
+
+                <div class="center-item ">
+                    <input type="text" id="name-field" class="input-field">
+                </div>
+                <div class=" center-item inactive">
+                    <div class="input-field" id="gender-field">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+
+                <div class="center-item inactive">
+                    <input type="email" id="email-field" class="input-field">
+                </div>
+
+                <div class=" center-item inactive">
+                    <input type="password" id="password-field"  class="input-field">
+                </div>
+
+                <div class="center-item inactive">
+                    <input type="password" id="cpassword-field" class="input-field">
+                </div>
+
+                <div class="center-item inactive">
+                    <input type="tel" id="tel-field" class="input-field">
+                </div>
+
+                <p id="error-text" class="center-item">&nbsp;</p>
+        </div>
+        </form>
+    </div>
+    </div>
+    <!--Form to add Vehicle-->
+    <button id="addvehicle" class="collapsible">Vehicle Details</button>
+    <div class="content">
+        <div class="box">
+            <p id="vehicle-text" class="center-item">
+                Enter Vehicle Name
+            </p>
+
+
+            <form action="">
+                <div class="  center-item active">
+                    <input type="text" id="vehicle-company" class="vehicle-input-field" name="vehicle_company">
+                </div>
+                <div class="  center-item inactive">
+                    <div class="vehicle-input-field" id="vehicle-type">
+                        <input type="radio" id="cycle" name="vehicle-type" value="Cycle">
+                        <label for="cycle"></label>Cycle</label>
+                        <input type="radio" id="motor-cycle" name="vehicle-type" value="Motor Cycle">
+                        <label for="motorcycle">Motor Cycle</label>
+                        <input type="radio" id="four-wheeler" name="vehicle-type" value="Four Wheeler">
+                        <label for="Four-wheeler">Four Wheeler</label>
+                    </div>
+                </div>
+                <div class="  center-item inactive">
+                    <input type="text" id="vehicle-number" class="vehicle-input-field" name="vehicle_number">
+                </div>
+                <div class="  center-item inactive">
+                    <input type="text" id="emp-id" class="vehicle-input-field" name="emp_id">
+                </div>
+                <div class="  center-item inactive">
+                    <textarea id="vehicle-identification" name="identification" class="vehicle-input-field" rows="4"
+                        cols="22"> </textarea>
+                </div>
+                <p id="vehicle-error-text" class="center-item">&nbsp;</p>
+            </form>
+            <div class="center-item inactive" id="price-button">
+                <button class="button1" onclick="displayPrice()">Get Pass</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Section to display price-->
+    <div class="box inactive" id="parking-prices">
+        <section id="pricing">
+            <h2>Pricing For Parking</h2>
+            <div class="currency-field center-item" id="vehicle-type" onchange="displayPrice()">
+                <h2>Show Price in</h2>
+                <input type="radio" id="usd" name="currency" value="USD" checked="checked">
+                <label for="USD">USD</label>
+                <input type="radio" id="yen" name="currency" value="YEN">
+                <label for="YEN">YEN</label>
+            </div>
+            <br><br>
+            <div class="price-box">
+                <div class="price">
+                    <h3></h3>
+                    <div class="circle"></div>
+                    <div><button class="button1">Purchase Now</button></div>
+                    <h3>Daily</h3>
+                </div>
+                <div class="price">
+                    <h3></h3>
+                    <div class="circle"></div>
+                    <div><button class="button1" >Purchase Now</button></div>
+                    <h3>Monthly</h3>
+                </div>
+                <div class="price">
+                    <h3></h3>
+                    <div class="circle "></div>
+                    <div><button class="button1">Purchase Now</button></div>
+                    <h3>Yearly</h3>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+    <script src="/ts/Employee.js"></script>
+    <script src="/ts/Vehicle.js"></script>
+    <script src="/ts/Parking.js"></script>
+
+</body>
+
+</html>
